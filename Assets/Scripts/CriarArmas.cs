@@ -14,6 +14,7 @@ public class CriarArmas : MonoBehaviour
     [SerializeField] private AudioClip jump;
     [SerializeField] private TextMeshProUGUI textoTensao;
     [SerializeField] private TextMeshProUGUI textoArmas;
+    [SerializeField] private TextMeshProUGUI informativo;
     private Audio audioSource;
    
     void Start()
@@ -56,14 +57,26 @@ public class CriarArmas : MonoBehaviour
 
     private void EspionarC()
     {
+
         armas += 5;
         tensao += 10;
     }
 
     private void EspionarR()
     {
-        armas += 5;
-        tensao += 10;
+        int dado = Random.Range(1, 6);
+
+        if (dado > 3)
+        {
+            informativo.text = "Seus espioes conseguiram informacoes";
+            armas += 5;
+            tensao += 10;
+        }
+        else if (dado <= 3)
+        {
+            informativo.text = "Seus espioes foram descobertos ou nao conseguiram informacoes";
+            tensao += 2;
+        }
     }
 
     public void MostraTexto()
@@ -72,4 +85,14 @@ public class CriarArmas : MonoBehaviour
         textoTensao.text = "Tensao Mundial: " + tensao.ToString();
     }
 
+    public int PerderArmas()
+    {
+       armas -= Random.Range(1,3);
+       return armas;
+    }
+
+    public float GetTensao()
+    {
+        return tensao;
+    }
 }
