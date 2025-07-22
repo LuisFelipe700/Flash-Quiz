@@ -1,12 +1,13 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CriarArmas : MonoBehaviour
 {
     [SerializeField] private int armas = 0;
-    [SerializeField] private float tensao = 0f;
+    [SerializeField] private int tensao = 0;
     [SerializeField] Button botaoCriarArma; //Cria uma arma a cada click e adiciona entre 1 e 3 de tensao
     [SerializeField] Button espionarInimigoC; //Espiona China e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao 
     [SerializeField] Button espionarInimigoR; //Espiona Russia e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao
@@ -26,13 +27,13 @@ public class CriarArmas : MonoBehaviour
     
     void Update()
     {
-        
+
     }
 
-    private void CriaArmas()
+    public void CriaArmas()
     {
-        ++armas;
-        tensao += Random.Range(1f, 3f); // aumenta tensão a cada clique
+        armas += Random.Range(1, 3);
+        tensao += Random.Range(1, 5); // aumenta tensão a cada clique
 
         if (tensao >=  100f)
         {
@@ -43,6 +44,9 @@ public class CriarArmas : MonoBehaviour
         {
             StartCoroutine(Paz());
         }
+
+        MostraTexto();
+       
     }
 
     IEnumerator Guerra()
@@ -55,15 +59,37 @@ public class CriarArmas : MonoBehaviour
         yield return new WaitForSeconds(1);
     }
 
-    private void EspionarC()
+    public void EspionarC()
     {
-
-        armas += 5;
-        tensao += 10;
+        StartCoroutine(EspionaC());
     }
 
-    private void EspionarR()
+    IEnumerator EspionaC()
     {
+        yield return new WaitForSeconds(5);
+        int dado = Random.Range(1, 6);
+
+        if (dado > 3)
+        {
+            informativo.text = "Seus espioes conseguiram informacoes";
+            armas += 5;
+            tensao += 10;
+        }
+        else if (dado <= 3)
+        {
+            informativo.text = "Seus espioes foram descobertos ou nao conseguiram informacoes";
+            tensao += 2;
+        }
+    }
+
+    public void EspionarR()
+    {
+        StartCoroutine(EspionaR());
+    }
+
+    IEnumerator EspionaR()
+    {
+        yield return new WaitForSeconds(5);
         int dado = Random.Range(1, 6);
 
         if (dado > 3)
@@ -82,7 +108,7 @@ public class CriarArmas : MonoBehaviour
     public void MostraTexto()
     {
         textoArmas.text = "Armas: " + armas.ToString();
-        textoTensao.text = "Tensao Mundial: " + tensao.ToString();
+        textoTensao.text = "Tensao: " + tensao.ToString() + "%";
     }
 
     public int PerderArmas()
@@ -94,5 +120,11 @@ public class CriarArmas : MonoBehaviour
     public float GetTensao()
     {
         return tensao;
+    }
+
+    public void NegociarPaz()
+    {
+        tensao -= 10;
+        armas -= 5;
     }
 }

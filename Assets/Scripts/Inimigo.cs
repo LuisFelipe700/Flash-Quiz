@@ -18,7 +18,7 @@ public class Inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CriarArmas();
+
     }
 
     private void CriarArmas()
@@ -28,7 +28,7 @@ public class Inimigo : MonoBehaviour
 
     IEnumerator ContaArmas()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         armasI += Random.Range(1, 2);
     }
 
