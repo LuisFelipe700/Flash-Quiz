@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 103032111}
   - component: {fileID: 103032110}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,8 +146,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b690d0bc580cc84590f6572a8d2ad57, type: 3}
-  m_Resource: {fileID: 8300000, guid: 7b690d0bc580cc84590f6572a8d2ad57, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f02cf77b34cdec442a2fa8f4629a5aed, type: 3}
+  m_Resource: {fileID: 8300000, guid: f02cf77b34cdec442a2fa8f4629a5aed, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 126750661}
   - component: {fileID: 126750660}
   - component: {fileID: 126750659}
+  - component: {fileID: 126750663}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -300,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda1583b849ecc74ea2a1a817eb8d78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  som: {fileID: 8300000, guid: d0eb6069ce7d48a4693139eefc1b937e, type: 3}
-  Jogo: Historia
+  Jogo: Contexto
+  clip: {fileID: 8300000, guid: d0eb6069ce7d48a4693139eefc1b937e, type: 3}
 --- !u!114 &126750660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +397,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126750657}
   m_CullTransparentMesh: 1
+--- !u!114 &126750663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126750657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61733c3ff7f28247a0ee077416f5894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &355277014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,8 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda1583b849ecc74ea2a1a817eb8d78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  som: {fileID: 8300000, guid: d0eb6069ce7d48a4693139eefc1b937e, type: 3}
   Jogo: Creditos
+  clip: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

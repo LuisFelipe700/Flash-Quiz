@@ -437,8 +437,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f02cf77b34cdec442a2fa8f4629a5aed, type: 3}
-  m_Resource: {fileID: 8300000, guid: f02cf77b34cdec442a2fa8f4629a5aed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7b690d0bc580cc84590f6572a8d2ad57, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7b690d0bc580cc84590f6572a8d2ad57, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda1583b849ecc74ea2a1a817eb8d78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  som: {fileID: 8300000, guid: d0eb6069ce7d48a4693139eefc1b937e, type: 3}
   Jogo: Tela Inicial
+  clip: {fileID: 0}
 --- !u!114 &1435557103
 MonoBehaviour:
   m_ObjectHideFlags: 0

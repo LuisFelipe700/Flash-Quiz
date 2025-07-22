@@ -1,26 +1,21 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
-
-    {
-    private AudioSource audio;
-    [SerializeField] private AudioClip som;
+{
     public string Jogo;
-
+    private Audio audioSource;
+    [SerializeField] private AudioClip clip;
     void Start()
     {
-        TocarSom();
-        audio = GetComponent<AudioSource>();
+        audioSource = GameObject.Find("AudioSource").GetComponent<Audio>();
     }
-    
     public void MudarCena1()
     {
         SceneManager.LoadScene(Jogo);
+        audioSource.TocarSom(clip);
     }
-    public void TocarSom()
-    {
-        audio.PlayOneShot(som);
-    }
+
 }
 
