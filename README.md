@@ -1,2 +1,2 @@
-# Flash-Quiz
+# Legado Belico
 Jogo de clique 
