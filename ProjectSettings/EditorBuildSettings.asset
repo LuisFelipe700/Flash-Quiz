@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Jogo.unity
     guid: be54b8002252acd46aea57ab8c304be4
   - enabled: 1
+    path: Assets/Scenes/Foguete.unity
+    guid: c456e3280c08ac54e80412527c14efc5
+  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 105e928490f11ba4990ce7337e9a7340
   m_configObjects:
