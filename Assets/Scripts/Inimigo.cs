@@ -51,4 +51,5 @@ public class Inimigo : MonoBehaviour
             armasI -= Random.Range(1, 5);
         }
     }
+
 }
