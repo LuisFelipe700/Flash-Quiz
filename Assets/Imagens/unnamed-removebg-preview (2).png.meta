@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 855625914ffe36842b3a706d24a3edc2
+guid: 04b15cb7b500dc34f9d7775c319a31bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -522127005491328720
-    second: "But\xE3o-removebg-preview_0"
+      213: -1650023830213464031
+    second: unnamed-removebg-preview (2)_0
+  - first:
+      213: 4328531036074196407
+    second: unnamed-removebg-preview (2)_1
+  - first:
+      213: -909683864375736822
+    second: unnamed-removebg-preview (2)_2
+  - first:
+      213: 8338314237420528877
+    second: unnamed-removebg-preview (2)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "But\xE3o-removebg-preview_0"
+      name: unnamed-removebg-preview (2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 687
-        height: 361
+        x: 14
+        y: 206
+        width: 95
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +163,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0390d0e314801c8f0800000000000000
-      internalID: -522127005491328720
+      spriteID: 12072319110f919e0800000000000000
+      internalID: -1650023830213464031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unnamed-removebg-preview (2)_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 181
+        width: 141
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bdb4743b08021c30800000000000000
+      internalID: 4328531036074196407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unnamed-removebg-preview (2)_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 206
+        width: 158
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06caf558572063f0800000000000000
+      internalID: -909683864375736822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unnamed-removebg-preview (2)_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 195
+        width: 91
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de46803ee94a7b370800000000000000
+      internalID: 8338314237420528877
       vertices: []
       indices: 
       edges: []
@@ -173,8 +248,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "But\xE3o-removebg-preview_0": -522127005491328720
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
