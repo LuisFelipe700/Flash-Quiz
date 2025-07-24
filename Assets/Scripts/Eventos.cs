@@ -19,7 +19,10 @@ public class Eventos : MonoBehaviour
     [SerializeField] GameObject iformativoaAliancaO;
     [SerializeField] GameObject iformativoaAliancaS;
     [SerializeField] GameObject iformativoaAliancaA;
-
+    private bool acordoT = false;
+    private bool acordoO = false;
+    private bool acordoS = false;
+    private bool acordoA = false;
     void Start()
     {
         estadosUnidos = GetComponent<CriarArmas>();
@@ -32,6 +35,29 @@ public class Eventos : MonoBehaviour
         
     }
 
+
+    private void Acordo()
+    {
+        if (!acordoT)
+        {
+            Tiar();
+        }
+
+        if (!acordoO)
+        {
+            Otan();
+        }
+
+        if (!acordoA)
+        {
+            Anzus();
+        }
+
+        if (!acordoS)
+        {
+            Seato();
+        }
+    }
     public void AceitarT ()
     {
         alianca.CriarAliancaT();
@@ -50,6 +76,7 @@ public class Eventos : MonoBehaviour
             pauseGame = true;
             PauseGame();
             iformativoAliancaT.SetActive(true);
+            acordoT = true;
         }
     }
 
@@ -62,6 +89,7 @@ public class Eventos : MonoBehaviour
             pauseGame = true;
             PauseGame();
             iformativoaAliancaO.SetActive(true);
+            acordoO = true;
         }
     }
 
@@ -86,6 +114,7 @@ public class Eventos : MonoBehaviour
             pauseGame = true;
             PauseGame();
             iformativoaAliancaS.SetActive(true);
+            acordoS = true;
         }
     }
 
@@ -110,6 +139,7 @@ public class Eventos : MonoBehaviour
             pauseGame = true;
             PauseGame();
             iformativoaAliancaA.SetActive(true);
+            acordoA = true;
         }
     }
     public void AceitarA()
