@@ -400,7 +400,7 @@ MonoBehaviour:
   VelocidadeDigitacao: 0.05
   contador: 0
   mudarDeCena: 1
-  nomeDaProximaCena: Jogo
+  nomeDaProximaCena: Tutorial
 --- !u!114 &596611351
 MonoBehaviour:
   m_ObjectHideFlags: 0

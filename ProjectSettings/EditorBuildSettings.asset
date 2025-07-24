@@ -9,17 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Tela Inicial.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Contexto.unity
+    guid: 35dbfb05591f48d41b5ec606bb67a87e
+  - enabled: 1
     path: Assets/Scenes/Historia.unity
     guid: 08424533a34af8149a8472d040524058
   - enabled: 1
-    path: Assets/Scenes/Contexto.unity
-    guid: 35dbfb05591f48d41b5ec606bb67a87e
+    path: Assets/Scenes/Tutorial.unity
+    guid: 6cc3159e80dbca342a692ad633c0bd52
   - enabled: 1
     path: Assets/Scenes/Jogo.unity
     guid: be54b8002252acd46aea57ab8c304be4
   - enabled: 1
     path: Assets/Scenes/Foguete.unity
     guid: c456e3280c08ac54e80412527c14efc5
+  - enabled: 1
+    path: Assets/Scenes/Derrota.unity
+    guid: 7a228a5eabb78234093c23dc7db97133
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 105e928490f11ba4990ce7337e9a7340

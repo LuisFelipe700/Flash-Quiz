@@ -23,5 +23,6 @@ public class Audio : MonoBehaviour
     {
         audio.clip = music;
         audio.Play();
+        
     }
 }
