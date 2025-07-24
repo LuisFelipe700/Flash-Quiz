@@ -623,7 +623,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      explosion0017_0: -3437097117308151260
+      explosion0017_1: -8452508327088742846
+      explosion0017_10: -4439662730201138322
+      explosion0017_11: 4981946361817686933
+      explosion0017_12: -6765492603851080239
+      explosion0017_13: -2222696678844252410
+      explosion0017_14: -6741482555743697484
+      explosion0017_15: 6708903474498983685
+      explosion0017_16: -8173188333858136740
+      explosion0017_17: 2550796910772139232
+      explosion0017_18: 6020074253106115463
+      explosion0017_2: -4160547281311030013
+      explosion0017_3: -8425162053744679768
+      explosion0017_4: 5722369288800380622
+      explosion0017_5: 7081037729143556809
+      explosion0017_6: 1326166799201816690
+      explosion0017_7: -5181528995843085614
+      explosion0017_8: 5679328912372412295
+      explosion0017_9: -141032441436471097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
