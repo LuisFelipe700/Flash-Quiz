@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 855625914ffe36842b3a706d24a3edc2
+guid: 009ee92a7cbfccf4aace3a620dc34237
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -522127005491328720
-    second: "But\xE3o-removebg-preview_0"
+      213: -3097411047202653889
+    second: Captura_de_tela_2025-07-24_155114-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "But\xE3o-removebg-preview_0"
+      name: Captura_de_tela_2025-07-24_155114-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 687
-        height: 361
+        x: 12
+        y: 5
+        width: 415
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0390d0e314801c8f0800000000000000
-      internalID: -522127005491328720
+      spriteID: f397d183019c305d0800000000000000
+      internalID: -3097411047202653889
       vertices: []
       indices: 
       edges: []
