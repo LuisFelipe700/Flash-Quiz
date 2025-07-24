@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class Inimigo : MonoBehaviour
 {
     [SerializeField] string nome;
-    [SerializeField] public int armasI;
+    [SerializeField] private int armasI;
     [SerializeField] private TextMeshProUGUI textoArmas;
     [SerializeField] CriarArmas player;
     private bool pactoVasovia = false;
@@ -14,25 +14,31 @@ public class Inimigo : MonoBehaviour
     private bool muro = false;
     private bool chernobyl = false;
     private bool stupnik = false;
-    private bool comecar = true;
-    private Audio audio;
+    private bool comecar;
+    //private Audio audio;
     void Start()
     {
-        audio = GameObject.Find("AudioSource").GetComponent<Audio>();
-        player = GetComponent<CriarArmas>();
-        if (comecar = true)
-        {
-            CriarArmas();
-            Espiao();
-        }
+        //audio = GameObject.Find("AudioSource").GetComponent<Audio>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
+        ComcecarJogo();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        
     }
 
+    private void ComcecarJogo()
+    {
+        if (comecar = true)
+        {
+            CriarArmas();
+            Espionar();
+        }
+    }
     private void CriarArmas()
     {
         StartCoroutine(ContaArmas()); 
@@ -52,7 +58,7 @@ public class Inimigo : MonoBehaviour
 
     private void MostrarTexto()
     {
-        textoArmas.text = "Armas Inimigo" + armasI.ToString();
+        textoArmas.text = "Armas Inimigo: " + armasI.ToString();
     }
     private void Espionar()
     {
@@ -74,15 +80,10 @@ public class Inimigo : MonoBehaviour
         }
     }
 
-    public void GanharArmas()
-    {
-        armasI += 15;
-    }
-
     public void PactoVarsovia()
     {
         armasI += 5;
-        player.tensao += 10;
+        player.GanharTensao();
         pactoVasovia = true;   
     }
 
@@ -114,18 +115,18 @@ public class Inimigo : MonoBehaviour
         if (armasI >= 25);
         {
             armasI -= 10;
-            player.tensao += 10;
+            player.GanharTensao();
             cuba = true;
         }
     }
 
     private void MuroDeBerlim()
     {
-        if (player.tensao >= 30 && armasI >= 30)
+        if (player.GetTensao() >= 30 && armasI >= 30)
         {
-            player.tensao += 10;
+            player.GanharTensao();
             armasI += 10;
-            player.confianca -= 10;
+            player.PerderConfianca();
         }
     }
 
@@ -133,7 +134,8 @@ public class Inimigo : MonoBehaviour
     {
         if (armasI >= 50)
         {
-            player.tensao += 20;
+            player.GanharTensao();
+            player.GanharTensao();
             armasI -= 20;
         }
     }
@@ -142,8 +144,18 @@ public class Inimigo : MonoBehaviour
     {
         if (armasI >= 35)
         {
-            player.tensao += 10;
-            player.confianca -= 15;
+            player.GanharTensao();
+            player.PerderConfianca ();
         }
+    }
+
+    public void GanharArmas()
+    {
+        armasI += 15;
+    }
+
+    public void PerderArmas()
+    {
+        armasI -= 10;
     }
 }

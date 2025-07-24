@@ -6,14 +6,6 @@ public class Eventos : MonoBehaviour
 {
     [SerializeField] CriarArmas estadosUnidos;
     [SerializeField] CriarAlianca alianca;
-    [SerializeField] GameObject tiar;
-    [SerializeField] TextMeshProUGUI tiarText;
-    [SerializeField] GameObject otan;
-    [SerializeField] TextMeshProUGUI otanText;
-    [SerializeField] GameObject seato;
-    [SerializeField] TextMeshProUGUI seatoText;
-    [SerializeField] GameObject anzus;
-    [SerializeField] TextMeshProUGUI anzusText;
     private bool pauseGame = false;
     [SerializeField] GameObject iformativoAliancaT;
     [SerializeField] GameObject iformativoaAliancaO;
@@ -25,14 +17,14 @@ public class Eventos : MonoBehaviour
     private bool acordoA = false;
     void Start()
     {
-        estadosUnidos = GetComponent<CriarArmas>();
+        estadosUnidos = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
         alianca = GetComponent<CriarAlianca>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Acordo();
     }
 
 
@@ -61,6 +53,7 @@ public class Eventos : MonoBehaviour
     public void AceitarT ()
     {
         alianca.CriarAliancaT();
+        iformativoAliancaT.SetActive(false);
     }
 
     public void RecusarT()
@@ -71,7 +64,7 @@ public class Eventos : MonoBehaviour
     }
     public void Tiar( )
     {
-        if (estadosUnidos.armas >= 15 && estadosUnidos.tensao <= 20 && estadosUnidos.confianca >= 25)
+        if (estadosUnidos.GetArmas() >= 15 && estadosUnidos.GetTensao() >= 20 && estadosUnidos.VerificaConfianca() >= 25)
         {
             pauseGame = true;
             PauseGame();
@@ -84,7 +77,7 @@ public class Eventos : MonoBehaviour
 
     public void Otan()
     {
-        if (estadosUnidos.armas >= 25 && estadosUnidos.tensao <= 30 && estadosUnidos.confianca >= 35)
+        if (estadosUnidos.GetArmas() >= 25 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 35)
         {
             pauseGame = true;
             PauseGame();
@@ -109,7 +102,7 @@ public class Eventos : MonoBehaviour
 
     public void Seato()
     {
-        if (estadosUnidos.armas >= 55 && estadosUnidos.tensao <= 25 && estadosUnidos.confianca >= 45)
+        if (estadosUnidos.GetArmas() >= 55 && estadosUnidos.GetTensao() >= 25 && estadosUnidos.VerificaConfianca() >= 45)
         {
             pauseGame = true;
             PauseGame();
@@ -134,7 +127,7 @@ public class Eventos : MonoBehaviour
 
     public void Anzus()
     {
-        if (estadosUnidos.armas >= 40 && estadosUnidos.tensao <= 30 && estadosUnidos.confianca >= 45)
+        if (estadosUnidos.GetArmas() >= 40 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 45)
         {
             pauseGame = true;
             PauseGame();

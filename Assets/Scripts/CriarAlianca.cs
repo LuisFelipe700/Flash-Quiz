@@ -13,8 +13,8 @@ public class CriarAlianca : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        estadosUnidos = GetComponent<CriarArmas>();
-        armasI = GetComponent<Inimigo>();
+        estadosUnidos = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
+        armasI = GameObject.FindGameObjectWithTag("inimigo").GetComponent<Inimigo>();
     }
 
     // Update is called once per frame
