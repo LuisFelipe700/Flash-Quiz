@@ -52,8 +52,10 @@ public class Eventos : MonoBehaviour
     }
     public void AceitarT ()
     {
-        alianca.CriarAliancaT();
+        estadosUnidos.GetTiar();
         iformativoAliancaT.SetActive(false);
+        pauseGame = false;
+        PauseGame();
     }
 
     public void RecusarT()
@@ -88,12 +90,15 @@ public class Eventos : MonoBehaviour
 
     public void AceitarO()
     {
-        alianca.CriarAliancaO();
+       estadosUnidos.GetOtan();
+        pauseGame = false;
+        PauseGame();
+        iformativoaAliancaO.SetActive(false);
     }
 
     public void RecusarO()
     {
-        iformativoAliancaT.SetActive(false);
+        iformativoaAliancaO.SetActive(false);
         pauseGame = false;
         PauseGame();
     }
@@ -113,12 +118,15 @@ public class Eventos : MonoBehaviour
 
     public void AceitarS()
     {
-        alianca.CriarAliancaS();
+        estadosUnidos.GetSeato();
+        pauseGame = false;
+        PauseGame();
+        iformativoaAliancaS.SetActive(false);
     }
 
     public void RecusarS()
     {
-        iformativoAliancaT.SetActive(false);
+        iformativoaAliancaS.SetActive(false);
         pauseGame = false;
         PauseGame();
     }
@@ -137,7 +145,10 @@ public class Eventos : MonoBehaviour
     }
     public void AceitarA()
     {
-        alianca.CriarAliancaA();
+        estadosUnidos.GetAnzsus();
+        pauseGame = false;
+        PauseGame();
+        iformativoaAliancaA.SetActive(false);
     }
 
     public void RecusarA()

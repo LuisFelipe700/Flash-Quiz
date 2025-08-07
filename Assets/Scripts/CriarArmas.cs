@@ -23,10 +23,10 @@ public class CriarArmas : MonoBehaviour
     //[SerializeField] Slider confiancaSlider;
     [SerializeField] private int confianca = 0;
     [SerializeField] Inimigo inimigo;
-    public bool tiarA = false;
-    public bool otanA = false;
-    public bool seatoA = false;
-    public bool anzusA = false;
+    protected bool tiarA = false;
+    protected bool otanA = false;
+    protected bool seatoA = false;
+    protected bool anzusA = false;
 
    // private Animator animator;
    // private Audio audioSource;
@@ -58,9 +58,10 @@ public class CriarArmas : MonoBehaviour
         tensao += Random.Range(1, 5); // aumenta tensão a cada clique
 
         SetAlianca();
-        Confianca();
+        StartCoroutine(Confianca());
+        MostraTexto();
 
-        if (seatoA = true)
+        if (seatoA == true)
         {
             armas += Random.Range(1, 3);
         }
@@ -72,9 +73,6 @@ public class CriarArmas : MonoBehaviour
         {
             StartCoroutine(Paz());
         }
-
-        StartCoroutine(Confianca());
-        MostraTexto();
     }
 
     IEnumerator Confianca()
@@ -86,19 +84,19 @@ public class CriarArmas : MonoBehaviour
     
     private void SetAlianca()
     {
-        if (tiarA = true)
+        if (tiarA == true)
         {
             StartCoroutine(TiarA());
         }
-        if (otanA = true)
+        if (otanA == true)
         {
             StartCoroutine(OtanA());
         }
-        if (seatoA = true)
+        if (seatoA == true)
         {
             StartCoroutine(SeatoA());
         }
-        if (anzusA = true)
+        if (anzusA == true)
         {
             StartCoroutine(AnzusA());
         }
@@ -249,5 +247,24 @@ public class CriarArmas : MonoBehaviour
     public int VerificaConfianca()
     {
         return confianca;
+    }
+
+    public void GetTiar()
+    {
+        tiarA = true;
+    }
+
+    public void GetOtan()
+    {
+        otanA = true;
+    }
+
+    public void GetSeato()
+    {
+        seatoA = true;
+    }
+    public void GetAnzsus()
+    {
+        anzusA = true;
     }
 }

@@ -26,22 +26,22 @@ public class CriarAlianca : MonoBehaviour
        
    public void CriarAliancaT()
     {
-        estadosUnidos.tiarA = true;
+        estadosUnidos.GetTiar();
     }
 
     public void CriarAliancaO()
     {
-        estadosUnidos.otanA = true;
+        estadosUnidos.GetOtan();
         armasI.PactoVarsovia();
     }
 
     public void CriarAliancaS()
     {
-        estadosUnidos.seatoA = true;
+        estadosUnidos.GetSeato();
     }
 
     public void CriarAliancaA()
     {
-        estadosUnidos.anzusA = true;
+        estadosUnidos.GetTensao();
     }
 }

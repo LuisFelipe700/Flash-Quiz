@@ -14,13 +14,18 @@ public class Inimigo : MonoBehaviour
     private bool muro = false;
     private bool chernobyl = false;
     private bool stupnik = false;
-    private bool comecar;
+    private bool comecar = true;
     //private Audio audio;
+
+    private void Awake()
+    {
+        ComcecarJogo();
+    }
     void Start()
     {
         //audio = GameObject.Find("AudioSource").GetComponent<Audio>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
-        ComcecarJogo();
+        
         
     }
 
@@ -33,7 +38,8 @@ public class Inimigo : MonoBehaviour
 
     private void ComcecarJogo()
     {
-        if (comecar = true)
+        
+        while (comecar == true)
         {
             CriarArmas();
             Espionar();
@@ -50,7 +56,7 @@ public class Inimigo : MonoBehaviour
         armasI += Random.Range(1, 5);
         MostrarTexto();
 
-        if (pactoVasovia = true)
+        if (pactoVasovia == true)
         {
             armasI += Random.Range(1, 3);
         }
@@ -68,6 +74,7 @@ public class Inimigo : MonoBehaviour
 
     IEnumerator Espiao()
     {
+        Debug.Log("Espionando...");
         yield return new WaitForSeconds(3f);
         int dadoI = Random.Range(1, 6);
         if (dadoI > 3)
@@ -82,6 +89,7 @@ public class Inimigo : MonoBehaviour
 
     public void PactoVarsovia()
     {
+        Debug.Log("Pacto de Varsóvia ativado");
         armasI += 5;
         player.GanharTensao();
         pactoVasovia = true;   
@@ -112,6 +120,7 @@ public class Inimigo : MonoBehaviour
     }
     private void Cuba()
     {
+        Debug.Log("Evento Cuba ativado");
         if (armasI >= 25);
         {
             armasI -= 10;
@@ -122,6 +131,7 @@ public class Inimigo : MonoBehaviour
 
     private void MuroDeBerlim()
     {
+        Debug.Log("Evento Muro de Berlim ativado");
         if (player.GetTensao() >= 30 && armasI >= 30)
         {
             player.GanharTensao();
@@ -132,6 +142,7 @@ public class Inimigo : MonoBehaviour
 
     private void Chernobyl()
     {
+        Debug.Log("Evento Chernobyl ativado");
         if (armasI >= 50)
         {
             player.GanharTensao();
@@ -142,6 +153,7 @@ public class Inimigo : MonoBehaviour
 
     private void Stupnik ()
     {
+        Debug.Log("Evento Stupnik ativado");
         if (armasI >= 35)
         {
             player.GanharTensao();
@@ -151,11 +163,13 @@ public class Inimigo : MonoBehaviour
 
     public void GanharArmas()
     {
+        Debug.Log("Inimigo ganhou armas");
         armasI += 15;
     }
 
     public void PerderArmas()
     {
+        Debug.Log("Inimigo perdeu armas");
         armasI -= 10;
     }
 }
