@@ -50,22 +50,22 @@ public class CriarArmas : MonoBehaviour
     void Update()
     {
         Limite();
+        MostraTexto();
     }
 
     public void CriaArmas()
     {
         armas += Random.Range(1, 3);
         tensao += Random.Range(1, 5); // aumenta tensão a cada clique
-
+        confianca += Random.Range(1, 8);
         SetAlianca();
-        StartCoroutine(Confianca());
-        MostraTexto();
+        
 
         if (seatoA == true)
         {
             armas += Random.Range(1, 3);
         }
-        if (tensao >=  100f)
+        if (tensao >= 100f)
         {
             StartCoroutine(Guerra());
         }
@@ -73,12 +73,6 @@ public class CriarArmas : MonoBehaviour
         {
             StartCoroutine(Paz());
         }
-    }
-
-    IEnumerator Confianca()
-    {
-        yield return new WaitForSeconds(3f);
-        ++confianca;
     }
 
     

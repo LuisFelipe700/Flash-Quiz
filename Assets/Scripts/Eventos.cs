@@ -153,7 +153,7 @@ public class Eventos : MonoBehaviour
 
     public void RecusarA()
     {
-        iformativoAliancaT.SetActive(false);
+        iformativoaAliancaA.SetActive(false);
         pauseGame = false;
         PauseGame();
     }
