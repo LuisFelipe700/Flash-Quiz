@@ -383,19 +383,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texto: {fileID: 2031177505}
-  mensagem1: "> \"Soldado, escute com aten\xE7\xE3o! O mundo est\xE1 dividido...
-    De um lado, os Estados Unidos. Do outro, a Uni\xE3o Sovi\xE9tica. No meio desse
+  mensagem1: "\"Soldado, escute com aten\xE7\xE3o! O mundo est\xE1 dividido... De
+    um lado, os Estados Unidos. Do outro, a Uni\xE3o Sovi\xE9tica. No meio desse
     campo minado geopol\xEDtico... estamos n\xF3s, o Brasil."
-  mensagem2: ">Nosso objetivo \xE9 claro: *construir 100 armas estrat\xE9gicas* antes
-    que a *Tens\xE3o Global* atinja o ponto de ruptura: *n\xEDvel 100*."
-  mensagem3: ">Para isso, voc\xEA ter\xE1 \xE0 sua disposi\xE7\xE3o tr\xEAs frentes
-    de a\xE7\xE3o:\n \n>* *Negocia\xE7\xE3o*: Converse com as pot\xEAncias, minta,
-    prometa ou compre tempo.\n> * *Espionagem: Extraia informa\xE7\xF5es e roube
-    tecnologias \u2014 mas cuidado! **Cada espionagem aumenta o n\xEDvel de tens\xE3o!*\n>
-    * *Produ\xE7\xE3o de armamentos*: Mais armas, mais poder... mas mais visibilidade.\n"
-  mensagem4: ">Cada escolha sua *pesa no equil\xEDbrio do mundo*. Aperte o bot\xE3o
+  mensagem2: "Nosso objetivo \xE9 claro: construir 100 armas estrat\xE9gicas antes
+    que a Tens\xE3o Global atinja o ponto de ruptura: n\xEDvel 100."
+  mensagem3: "Para isso, voc\xEA ter\xE1 \xE0 sua disposi\xE7\xE3o tr\xEAs frentes
+    de a\xE7\xE3o:\n \nNegocia\xE7\xE3o: Converse com as pot\xEAncias, minta, prometa
+    ou compre tempo.\nEspionagem: Extraia informa\xE7\xF5es e roube tecnologias \u2014
+    mas cuidado! Cada espionagem aumenta o n\xEDvel de tens\xE3o! Produ\xE7\xE3o
+    de armamentos: Mais armas, mais poder... mas mais visibilidade.\n"
+  mensagem4: "Cada escolha sua pesa no equil\xEDbrio do mundo. Aperte o bot\xE3o
     errado e ver\xE1 a tens\xE3o disparar. O mundo observar\xE1 cada movimento.\n "
-  mensagem5: ">Soldado... o *futuro do Brasil*, e talvez da humanidade, est\xE1 nas
+  mensagem5: "Soldado... o futuro do Brasil, e talvez da humanidade, est\xE1 nas
     suas m\xE3os. Boa sorte.\""
   VelocidadeDigitacao: 0.05
   contador: 0

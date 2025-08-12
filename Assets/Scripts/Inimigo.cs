@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Inimigo : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class Inimigo : MonoBehaviour
     private bool muro = false;
     private bool chernobyl = false;
     private bool stupnik = false;
-    private bool comecar = true;
     //private Audio audio;
 
     private void Awake()
@@ -32,18 +32,18 @@ public class Inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Limite();
+        MostrarTexto();
 
-        
     }
 
     private void ComcecarJogo()
     {
         
-        while (comecar == true)
-        {
+        
             CriarArmas();
             Espionar();
-        }
+        
     }
     private void CriarArmas()
     {
@@ -54,11 +54,21 @@ public class Inimigo : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         armasI += Random.Range(1, 5);
-        MostrarTexto();
 
         if (pactoVasovia == true)
         {
             armasI += Random.Range(1, 3);
+        }
+        StartCoroutine(ContaArmas());
+
+        if (armasI >= 100)
+        {
+            StartCoroutine(Guerra());
+        }
+        IEnumerator Guerra()
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("Guerra");
         }
     }
 
@@ -72,6 +82,10 @@ public class Inimigo : MonoBehaviour
         
     }
 
+    public int GetArmas()
+    {
+        return armasI;
+    }
     IEnumerator Espiao()
     {
         Debug.Log("Espionando...");
@@ -171,5 +185,15 @@ public class Inimigo : MonoBehaviour
     {
         Debug.Log("Inimigo perdeu armas");
         armasI -= 10;
+    }
+
+    private void Limite()
+    {
+        if (armasI > 100)
+        {
+            armasI = 100;
+        }
+        else if (armasI < 0)
+        { armasI = 0; }
     }
 }
