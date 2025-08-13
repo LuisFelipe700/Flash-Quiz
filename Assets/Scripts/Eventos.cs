@@ -50,6 +50,8 @@ public class Eventos : MonoBehaviour
             Seato();
         }
     }
+
+    //Tiar
     public void AceitarT ()
     {
         estadosUnidos.GetTiar();
@@ -75,7 +77,7 @@ public class Eventos : MonoBehaviour
         }
     }
 
-
+    //Otan
 
     public void Otan()
     {
@@ -104,7 +106,7 @@ public class Eventos : MonoBehaviour
     }
 
 
-
+    //Seato
     public void Seato()
     {
         if (estadosUnidos.GetArmas() >= 55 && estadosUnidos.GetTensao() >= 25 && estadosUnidos.VerificaConfianca() >= 45)
@@ -132,7 +134,7 @@ public class Eventos : MonoBehaviour
     }
 
 
-
+    //Anzus
     public void Anzus()
     {
         if (estadosUnidos.GetArmas() >= 40 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 45)
