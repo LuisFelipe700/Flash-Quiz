@@ -464,6 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estadosUnidos: {fileID: 0}
   alianca: {fileID: 0}
+  Inimigo: {fileID: 0}
   iformativoAliancaT: {fileID: 1320741903}
   iformativoaAliancaO: {fileID: 709110513}
   iformativoaAliancaS: {fileID: 1905068246}
@@ -1141,7 +1142,7 @@ MonoBehaviour:
   m_text: "O TIAR uniu os EUA e pa\xEDses da Am\xE9rica Latina em um pacto de defesa
     m\xFAtua. Serviu como justificativa para os EUA influenciarem politicamente e
     militarmente a regi\xE3o contra o avan\xE7o do comunismo.\n\nCaso aceite o tratado,
-    vai receceber 15 armas e 5% de confianca, porem a tensao vai aumentar em 20%,
+    vai receceber 10 armas e 5% de confianca, porem a tensao vai aumentar em 15%,
     ."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2602,7 +2603,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 969011115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1802796360}
+        m_TargetAssemblyTypeName: Eventos, Assembly-CSharp
+        m_MethodName: AceitarS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &969011115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3425,7 +3438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: 
-  armasI: 99
+  armasI: 0
   textoArmas: {fileID: 1628042405}
   player: {fileID: 335163189}
 --- !u!4 &1342564674
@@ -4597,7 +4610,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1781919811}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1802796360}
+        m_TargetAssemblyTypeName: Eventos, Assembly-CSharp
+        m_MethodName: RecusarS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1781919811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,6 +4692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estadosUnidos: {fileID: 335163189}
   alianca: {fileID: 0}
+  Inimigo: {fileID: 0}
   iformativoAliancaT: {fileID: 1320741903}
   iformativoaAliancaO: {fileID: 709110513}
   iformativoaAliancaS: {fileID: 1499489787}

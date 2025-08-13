@@ -512,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texto: {fileID: 165990266}
   mensagem1: "O objetivo do jogo \xE9 conquistar 100 armas sem deixar que o n\xEDvel
-    de tens\xE3o mundial atinja 100%.\n\nSistema de Confian\xE7a\nConstrua alian\xE7as
+    de tens\xE3o mundial atinja 150%.\n\nSistema de Confian\xE7a\nConstrua alian\xE7as
     estrat\xE9gicas para obter buffs (benef\xEDcios extras).\n\n\n\n"
   mensagem2: "Botao de Criar Armas\n\nCria entre 1 e 3 armas.\n\nAumenta a tens\xE3o
     mundial entre 1% e 5%."

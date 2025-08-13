@@ -55,9 +55,9 @@ public class CriarArmas : MonoBehaviour
 
     public void CriaArmas()
     {
-        armas += Random.Range(1, 3);
+        armas += Random.Range(1, 5);
         tensao += Random.Range(1, 3); // aumenta tensão a cada clique
-        confianca += Random.Range(1, 8);
+        confianca += Random.Range(1, 5);
         EndGame();
 
         if (seatoA == true)
@@ -69,7 +69,7 @@ public class CriarArmas : MonoBehaviour
 
     private void EndGame()
     {
-        if (tensao >= 100f)
+        if (tensao >= 150f)
         {
             SceneManager.LoadScene("Derrota");
         }
@@ -93,13 +93,13 @@ public class CriarArmas : MonoBehaviour
         {
             informativo.text = "Seus espioes conseguiram informacoes";
             armas += 5;
-            tensao += 10;
+            tensao += 5;
             inimigo.PerderArmas();
         }
         else if (dado <= 3)
         {
             informativo.text = "Seus espioes foram descobertos ou nao conseguiram informacoes";
-            tensao += 10;
+            tensao += 5;
         }
         yield return new WaitForSeconds(5f);
     }
@@ -129,19 +129,26 @@ public class CriarArmas : MonoBehaviour
 
     IEnumerator Negociar()
     {
-        int dado = Random.Range(1, 6);
-        if (dado > 3)
+        if (armas < 5)
         {
-            tensao -= 10;
-            armas -= 10;
-            inimigo.PerderArmas();
-            informativo.text = "A negociacao deu certo";
+            informativo.text = "Voce nao tem armas suficientes para negociar";
         }
-        if (dado <= 3)
+        else if (armas >= 5)
         {
-            tensao -= 5;
-            armas -= 5;
+            int dado = Random.Range(1, 6);
+            if (dado > 3)
+            {
+                tensao -= 5;
+                armas -= 5;
+                inimigo.PerderArmas();
+                informativo.text = "A negociacao deu certo";
+            }
+            if (dado <= 3)
+            {
+                tensao -= 5;
+                armas -= 5;
 
+            }
         }
         yield return new WaitForSeconds(5f);
     }
@@ -157,7 +164,7 @@ public class CriarArmas : MonoBehaviour
 
         if (tensao > 100)
         {
-            tensao = 100;
+            tensao = 150;
         }
         else if (tensao < 0)
         {
@@ -172,12 +179,12 @@ public class CriarArmas : MonoBehaviour
 
     public void PerderArmas()
     {
-        armas -= 10;
+        armas -= 5;
     }
 
     public void PerderConfianca()
     {
-        confianca -= 10;
+        confianca -= 5;
     }
 
     public int VerificaConfianca()
@@ -187,8 +194,8 @@ public class CriarArmas : MonoBehaviour
 
     public void GetTiar()
     {
-        armas += 15;
-        tensao += 20;
+        armas += 10;
+        tensao += 15;
         confianca += 5;
     }
 
@@ -200,13 +207,13 @@ public class CriarArmas : MonoBehaviour
     public void GetSeato()
     {
         confianca += 10;
-        tensao += 10;
+        tensao += 5;
         seatoA = true;
     }
     public void GetAnzsus()
     {
         confianca += 10;
-        tensao += 10;
+        tensao += 5;
         inimigo.GanharArmas();
     }
 }

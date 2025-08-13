@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
    // [SerializeField] private AudioClip clip;
     void Start()
     {
-        audioSource = GameObject.Find("AudioSource").GetComponent<Audio>();
+        audioSource = GetComponent<Audio>();
     }
     public void MudarCena1()
     {
