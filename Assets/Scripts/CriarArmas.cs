@@ -15,22 +15,21 @@ public class CriarArmas : MonoBehaviour
     [SerializeField] Button espionarInimigoC; //Espiona China e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao 
     [SerializeField] Button espionarInimigoR; //Espiona Russia e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao
     [SerializeField] Button negociarPaz; //Diminui 10 de tensao, porem perde 5 armas e os inimigos perdem entre 3 a 8 armas
-    [SerializeField] private AudioClip jump;
     [SerializeField] private TextMeshProUGUI textoTensao;
     [SerializeField] private TextMeshProUGUI textoArmas;
     [SerializeField] private TextMeshProUGUI informativo;
     [SerializeField] private TextMeshProUGUI textoConfianca;
+    //Sons
+    [SerializeField] AudioClip criarArma;
     //[SerializeField] Slider confiancaSlider;
     [SerializeField] private int confianca = 0;
     [SerializeField] Inimigo inimigo;
-    protected bool tiarA = false;
-    protected bool otanA = false;
-    protected bool seatoA = false;
-    protected bool anzusA = false;
+    private bool seatoA = false; //Seato
 
-   // private Animator animator;
-   // private Audio audioSource;
-   
+
+    // private Animator animator;
+    // private Audio audioSource;
+
     void Start()
     {
         //audioSource = GameObject.Find("AudioSource").GetComponent<Audio>();
@@ -56,9 +55,9 @@ public class CriarArmas : MonoBehaviour
     public void CriaArmas()
     {
         armas += Random.Range(1, 3);
-        tensao += Random.Range(1, 5); // aumenta tensão a cada clique
+        tensao += Random.Range(1, 3); // aumenta tensão a cada clique
         confianca += Random.Range(1, 8);
-        SetAlianca();
+        
         
 
         if (seatoA == true)
@@ -75,27 +74,6 @@ public class CriarArmas : MonoBehaviour
         }
     }
 
-    
-    private void SetAlianca()
-    {
-        if (tiarA == true)
-        {
-            StartCoroutine(TiarA());
-        }
-        if (otanA == true)
-        {
-            StartCoroutine(OtanA());
-        }
-        if (seatoA == true)
-        {
-            StartCoroutine(SeatoA());
-        }
-        if (anzusA == true)
-        {
-            StartCoroutine(AnzusA());
-        }
-        
-    }
 
     IEnumerator TiarA()
     {
@@ -115,6 +93,7 @@ public class CriarArmas : MonoBehaviour
         yield return new WaitForSeconds(1f);
         confianca += 10;
         tensao += 10;
+        seatoA = true;
     }
 
     IEnumerator AnzusA()
@@ -245,20 +224,20 @@ public class CriarArmas : MonoBehaviour
 
     public void GetTiar()
     {
-        tiarA = true;
+        StartCoroutine(TiarA());
     }
 
     public void GetOtan()
     {
-        otanA = true;
+        StartCoroutine(OtanA());
     }
 
     public void GetSeato()
     {
-        seatoA = true;
+        StartCoroutine(SeatoA());
     }
     public void GetAnzsus()
     {
-        anzusA = true;
+        StartCoroutine(AnzusA());
     }
 }

@@ -52,7 +52,7 @@ public class Inimigo : MonoBehaviour
 
     IEnumerator ContaArmas()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         armasI += Random.Range(1, 5);
 
         if (pactoVasovia == true)
@@ -68,7 +68,7 @@ public class Inimigo : MonoBehaviour
         IEnumerator Guerra()
         {
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("Guerra");
+            SceneManager.LoadScene("Derrota");
         }
     }
 

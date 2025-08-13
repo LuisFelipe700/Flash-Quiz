@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 335163189}
   - component: {fileID: 335163190}
   m_Layer: 0
-  m_Name: Brasil
+  m_Name: EUA
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,11 +443,11 @@ MonoBehaviour:
   espionarInimigoC: {fileID: 0}
   espionarInimigoR: {fileID: 508439667}
   negociarPaz: {fileID: 1929975992}
-  jump: {fileID: 0}
   textoTensao: {fileID: 836367795}
   textoArmas: {fileID: 383918392}
   informativo: {fileID: 397442606}
   textoConfianca: {fileID: 827895939}
+  criarArma: {fileID: 0}
   confianca: 0
   inimigo: {fileID: 1342564673}
 --- !u!114 &335163190
@@ -3406,7 +3406,7 @@ GameObject:
   - component: {fileID: 1342564674}
   - component: {fileID: 1342564673}
   m_Layer: 0
-  m_Name: US
+  m_Name: Uniao Sovietica
   m_TagString: inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3425,7 +3425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: 
-  armasI: 0
+  armasI: 99
   textoArmas: {fileID: 1628042405}
   player: {fileID: 335163189}
 --- !u!4 &1342564674
