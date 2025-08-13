@@ -6,6 +6,7 @@ public class Eventos : MonoBehaviour
 {
     [SerializeField] CriarArmas estadosUnidos;
     [SerializeField] CriarAlianca alianca;
+    [SerializeField] Inimigo Inimigo;
     private bool pauseGame = false;
     [SerializeField] GameObject iformativoAliancaT;
     [SerializeField] GameObject iformativoaAliancaO;
@@ -15,16 +16,23 @@ public class Eventos : MonoBehaviour
     private bool acordoO = false;
     private bool acordoS = false;
     private bool acordoA = false;
+
+    private bool cuba = false;
+    private bool berlim = false;
+    private bool stupnik = false;
+    private bool chernobyl = false;
     void Start()
     {
         estadosUnidos = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
         alianca = GetComponent<CriarAlianca>();
+        Inimigo = GameObject.FindGameObjectWithTag("inimigo").GetComponent<Inimigo>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Acordo();
+        URSS();
     }
 
 
@@ -48,6 +56,26 @@ public class Eventos : MonoBehaviour
         if (!acordoS)
         {
             Seato();
+        }
+    }
+
+    private void URSS()
+    {
+        if (!cuba)
+        {
+            AcontecerCuba();
+        }
+        if (!berlim)
+        {
+            AcontecerBerlim();
+        }
+        if (!stupnik)
+        {
+            AcontecerStupnik();
+        }
+        if (!chernobyl)
+        {
+            AcontecerChernobyl();
         }
     }
 
@@ -93,6 +121,7 @@ public class Eventos : MonoBehaviour
     public void AceitarO()
     {
        estadosUnidos.GetOtan();
+        Inimigo.PactoVarsovia();
         pauseGame = false;
         PauseGame();
         iformativoaAliancaO.SetActive(false);
@@ -173,4 +202,42 @@ public class Eventos : MonoBehaviour
             pauseGame = true;
         }
     }
+
+    // Eventos Inomigos
+
+    public void AcontecerCuba()
+    {
+        if (Inimigo.GetArmasI() >= 20 && estadosUnidos.GetTensao() >= 20)
+        {
+            Inimigo.Cuba();
+            cuba = true;
+        }
+    }
+
+    public void AcontecerBerlim()
+    {
+        if (Inimigo.GetArmasI() >= 30 && estadosUnidos.GetTensao() >= 30)
+        {
+            Inimigo.MuroDeBerlim();
+            berlim = true;
+        }
+    }
+
+    public void AcontecerStupnik()
+    {
+        if (Inimigo.GetArmasI() >= 35 && estadosUnidos.GetTensao() >= 30)
+        {
+            Inimigo.Stupnik();
+            stupnik = true;
+        }
+    }
+    public void AcontecerChernobyl()
+    {
+        if (Inimigo.GetArmasI() >= 40 && estadosUnidos.GetTensao() >= 35)
+        {
+            Inimigo.Chernobyl();
+            chernobyl = true;
+        }
+    }
+
 }

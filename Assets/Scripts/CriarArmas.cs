@@ -50,6 +50,7 @@ public class CriarArmas : MonoBehaviour
     {
         Limite();
         MostraTexto();
+        EndGame();
     }
 
     public void CriaArmas()
@@ -57,63 +58,25 @@ public class CriarArmas : MonoBehaviour
         armas += Random.Range(1, 3);
         tensao += Random.Range(1, 3); // aumenta tensão a cada clique
         confianca += Random.Range(1, 8);
-        
-        
+        EndGame();
 
         if (seatoA == true)
         {
             armas += Random.Range(1, 3);
         }
+    }
+
+
+    private void EndGame()
+    {
         if (tensao >= 100f)
         {
-            StartCoroutine(Guerra());
+            SceneManager.LoadScene("Derrota");
         }
         if (armas >= 100)
         {
-            StartCoroutine(Paz());
+            SceneManager.LoadScene("Foguete");
         }
-    }
-
-
-    IEnumerator TiarA()
-    {
-        yield return new WaitForSeconds(1f);
-        armas += 15;
-        tensao += 20;
-        confianca += 5;
-    }
-
-    IEnumerator OtanA()
-    {
-        yield return new WaitForSeconds(1f);
-    }
-
-    IEnumerator SeatoA()
-    {
-        yield return new WaitForSeconds(1f);
-        confianca += 10;
-        tensao += 10;
-        seatoA = true;
-    }
-
-    IEnumerator AnzusA()
-    {
-        yield return new WaitForSeconds(1f);
-        confianca += 10;
-        tensao += 10;
-        inimigo.GanharArmas();
-    }
-    IEnumerator Guerra()
-    {
-
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Derrota");
-    }
-
-    IEnumerator Paz()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Foguete");
     }
 
     public void EspionarR()
@@ -204,7 +167,7 @@ public class CriarArmas : MonoBehaviour
 
     public void GanharTensao()
     {
-        tensao += 10;
+        tensao += 5;
     }
 
     public void PerderArmas()
@@ -224,20 +187,26 @@ public class CriarArmas : MonoBehaviour
 
     public void GetTiar()
     {
-        StartCoroutine(TiarA());
+        armas += 15;
+        tensao += 20;
+        confianca += 5;
     }
 
     public void GetOtan()
     {
-        StartCoroutine(OtanA());
+        
     }
 
     public void GetSeato()
     {
-        StartCoroutine(SeatoA());
+        confianca += 10;
+        tensao += 10;
+        seatoA = true;
     }
     public void GetAnzsus()
     {
-        StartCoroutine(AnzusA());
+        confianca += 10;
+        tensao += 10;
+        inimigo.GanharArmas();
     }
 }

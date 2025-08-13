@@ -34,7 +34,6 @@ public class Inimigo : MonoBehaviour
     {
         Limite();
         MostrarTexto();
-
     }
 
     private void ComcecarJogo()
@@ -52,7 +51,7 @@ public class Inimigo : MonoBehaviour
 
     IEnumerator ContaArmas()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         armasI += Random.Range(1, 5);
 
         if (pactoVasovia == true)
@@ -109,76 +108,46 @@ public class Inimigo : MonoBehaviour
         pactoVasovia = true;   
     }
 
-
-    private void Eventos()
+    public void Cuba()
     {
-        if (!cuba)
-        {
-            Cuba();
-        }
-
-        if (!muro)
-        {
-            MuroDeBerlim();
-        }
-
-        if (!chernobyl)
-        {
-            Chernobyl();
-        }
-
-        if (!stupnik)
-        {
-            Stupnik();
-        }
-    }
-    private void Cuba()
-    {
-        Debug.Log("Evento Cuba ativado");
-        if (armasI >= 25);
-        {
-            armasI -= 10;
+        
+            Debug.Log("Evento Cuba ativado");
+            armasI += 5;
             player.GanharTensao();
             cuba = true;
-        }
+        
     }
 
-    private void MuroDeBerlim()
+    public void MuroDeBerlim()
     {
+
         Debug.Log("Evento Muro de Berlim ativado");
-        if (player.GetTensao() >= 30 && armasI >= 30)
-        {
-            player.GanharTensao();
-            armasI += 10;
-            player.PerderConfianca();
-        }
+        player.GanharTensao();
+        armasI += 5;
+        player.PerderConfianca();
+        
     }
 
-    private void Chernobyl()
+    public void Chernobyl()
     {
         Debug.Log("Evento Chernobyl ativado");
-        if (armasI >= 50)
-        {
-            player.GanharTensao();
-            player.GanharTensao();
-            armasI -= 20;
-        }
+        player.GanharTensao();
+        player.GanharTensao();
+        armasI -= 5;
     }
 
-    private void Stupnik ()
+    public void Stupnik ()
     {
         Debug.Log("Evento Stupnik ativado");
-        if (armasI >= 35)
-        {
-            player.GanharTensao();
-            player.PerderConfianca ();
-        }
+        player.GanharTensao();
+        player.PerderConfianca ();
+        
     }
 
     public void GanharArmas()
     {
         Debug.Log("Inimigo ganhou armas");
-        armasI += 15;
+        armasI += 10;
     }
 
     public void PerderArmas()
@@ -196,4 +165,9 @@ public class Inimigo : MonoBehaviour
         else if (armasI < 0)
         { armasI = 0; }
     }
+
+    public int GetArmasI()
+    {
+        return armasI;
+    }   
 }
