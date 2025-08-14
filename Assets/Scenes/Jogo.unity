@@ -255,6 +255,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16667657}
   m_CullTransparentMesh: 1
+--- !u!1 &109134279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109134281}
+  - component: {fileID: 109134280}
+  m_Layer: 0
+  m_Name: DiretorBatalha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &109134280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109134279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c546c488e814f44ba14df61dd74b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  criarArmas: {fileID: 0}
+  inimigo: {fileID: 0}
+--- !u!4 &109134281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109134279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1059.2277, y: 572.4879, z: -3.2250965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126032480
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 335163188}
   - component: {fileID: 335163189}
-  - component: {fileID: 335163190}
   m_Layer: 0
   m_Name: EUA
   m_TagString: Player
@@ -439,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armas: 0
   tensao: 0
+  confianca: 0
   botaoCriarArma: {fileID: 916251777}
   espionarInimigoC: {fileID: 0}
   espionarInimigoR: {fileID: 508439667}
@@ -448,27 +494,7 @@ MonoBehaviour:
   informativo: {fileID: 397442606}
   textoConfianca: {fileID: 827895939}
   criarArma: {fileID: 0}
-  confianca: 0
   inimigo: {fileID: 1342564673}
---- !u!114 &335163190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335163187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9359dcc7c82e12c45aae3dcfa644048c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estadosUnidos: {fileID: 0}
-  alianca: {fileID: 0}
-  Inimigo: {fileID: 0}
-  iformativoAliancaT: {fileID: 1320741903}
-  iformativoaAliancaO: {fileID: 709110513}
-  iformativoaAliancaS: {fileID: 1905068246}
-  iformativoaAliancaA: {fileID: 1499489787}
 --- !u!1 &383918390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,6 +4723,10 @@ MonoBehaviour:
   iformativoaAliancaO: {fileID: 709110513}
   iformativoaAliancaS: {fileID: 1499489787}
   iformativoaAliancaA: {fileID: 1905068246}
+  acordoT: 0
+  acordoO: 0
+  acordoS: 0
+  acordoA: 0
 --- !u!4 &1802796361
 Transform:
   m_ObjectHideFlags: 0
@@ -6126,3 +6156,4 @@ SceneRoots:
   - {fileID: 1342564674}
   - {fileID: 1802796361}
   - {fileID: 1541259059}
+  - {fileID: 109134281}

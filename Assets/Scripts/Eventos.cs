@@ -12,15 +12,17 @@ public class Eventos : MonoBehaviour
     [SerializeField] GameObject iformativoaAliancaO;
     [SerializeField] GameObject iformativoaAliancaS;
     [SerializeField] GameObject iformativoaAliancaA;
-    private bool acordoT = false;
-    private bool acordoO = false;
-    private bool acordoS = false;
-    private bool acordoA = false;
+    [SerializeField] private bool acordoT = false;
+    [SerializeField]  private bool acordoO = false;
+    [SerializeField] private bool acordoS = false;
+    [SerializeField] private bool acordoA = false;
 
     private bool cuba = false;
     private bool berlim = false;
     private bool stupnik = false;
     private bool chernobyl = false;
+
+    private bool acontecendo = false;
     void Start()
     {
         estadosUnidos = GameObject.FindGameObjectWithTag("Player").GetComponent<CriarArmas>();
@@ -31,77 +33,62 @@ public class Eventos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Acordo();
+        Acordos();
         URSS();
     }
 
 
-    private void Acordo()
+    private void Acordos()
     {
-        if (!acordoT)
-        {
-            Tiar();
-        }
-
-        if (!acordoO)
-        {
-            Otan();
-        }
-
-        if (!acordoA)
-        {
-            Anzus();
-        }
-
-        if (!acordoS)
-        {
-            Seato();
-        }
+        
+        Tiar();
+        
+        Otan();
+       
+        Anzus();
+        
+        Seato();
+        
     }
 
     private void URSS()
     {
-        if (!cuba)
-        {
-            AcontecerCuba();
-        }
-        if (!berlim)
-        {
-            AcontecerBerlim();
-        }
-        if (!stupnik)
-        {
-            AcontecerStupnik();
-        }
-        if (!chernobyl)
-        {
-            AcontecerChernobyl();
-        }
+        
+        AcontecerCuba();
+        
+        AcontecerBerlim();
+        
+        AcontecerStupnik();
+        
+        AcontecerChernobyl();
+        
     }
 
     //Tiar
     public void AceitarT ()
     {
         estadosUnidos.GetTiar();
-        iformativoAliancaT.SetActive(false);
-        pauseGame = false;
+        
         PauseGame();
+        acontecendo = false; // Permite que o evento aconteça novamente
+        iformativoAliancaT.SetActive(false);
     }
 
     public void RecusarT()
     {
-        iformativoAliancaT.SetActive(false);
-        pauseGame = false;
+        
         PauseGame();
+        acontecendo = false; // Permite que o evento aconteça novamente
+        iformativoAliancaT.SetActive(false);
     }
     public void Tiar( )
     {
-        if (estadosUnidos.GetArmas() >= 15 && estadosUnidos.GetTensao() >= 20 && estadosUnidos.VerificaConfianca() >= 25)
+        if (estadosUnidos.GetArmas() >= 15 && estadosUnidos.GetTensao() >= 20 && estadosUnidos.VerificaConfianca() >= 25 && acordoT == false && acontecendo == false)
         {
-            pauseGame = true;
             PauseGame();
             iformativoAliancaT.SetActive(true);
             acordoT = true;
+            acontecendo = true; // Impede que o evento aconteça novamente
         }
     }
 
@@ -109,12 +96,12 @@ public class Eventos : MonoBehaviour
 
     public void Otan()
     {
-        if (estadosUnidos.GetArmas() >= 25 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 35)
+        if (estadosUnidos.GetArmas() >= 25 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 35 && acordoO == false && acontecendo == false)
         {
-            pauseGame = true;
             PauseGame();
             iformativoaAliancaO.SetActive(true);
             acordoO = true;
+            acontecendo = true; // Impede que o evento aconteça novamente
         }
     }
 
@@ -122,71 +109,78 @@ public class Eventos : MonoBehaviour
     {
        estadosUnidos.GetOtan();
         Inimigo.PactoVarsovia();
-        pauseGame = false;
         PauseGame();
+        
+        acontecendo = false; // Permite que o evento aconteça novamente
         iformativoaAliancaO.SetActive(false);
     }
 
     public void RecusarO()
     {
-        iformativoaAliancaO.SetActive(false);
-        pauseGame = false;
+
         PauseGame();
+        acontecendo = false; // Permite que o evento aconteça novamente
+        iformativoaAliancaO.SetActive(false);
+
     }
 
 
     //Seato
     public void Seato()
     {
-        if (estadosUnidos.GetArmas() >= 55 && estadosUnidos.GetTensao() >= 25 && estadosUnidos.VerificaConfianca() >= 45)
+        if (estadosUnidos.VerificaConfianca() == 60)
         {
-            pauseGame = true;
+
             PauseGame();
             iformativoaAliancaS.SetActive(true);
             acordoS = true;
+            acontecendo = true; // Impede que o evento aconteça novamente
         }
     }
 
     public void AceitarS()
     {
+        
         estadosUnidos.GetSeato();
-        pauseGame = false;
+        acontecendo = false; // Permite que o evento aconteça novamente
         PauseGame();
         iformativoaAliancaS.SetActive(false);
     }
 
     public void RecusarS()
     {
-        iformativoaAliancaS.SetActive(false);
-        pauseGame = false;
         PauseGame();
+        acontecendo = false; // Permite que o evento aconteça novamente
+        iformativoaAliancaS.SetActive(false);
     }
 
 
     //Anzus
     public void Anzus()
     {
-        if (estadosUnidos.GetArmas() >= 40 && estadosUnidos.GetTensao() >= 30 && estadosUnidos.VerificaConfianca() >= 45)
+        if (estadosUnidos.GetArmas() >= 35 && estadosUnidos.GetTensao() >= 25 && estadosUnidos.VerificaConfianca() >= 45 && acordoA == false && acontecendo == false)
         {
-            pauseGame = true;
             PauseGame();
             iformativoaAliancaA.SetActive(true);
             acordoA = true;
+            acontecendo = true; // Impede que o evento aconteça novamente
         }
     }
     public void AceitarA()
     {
         estadosUnidos.GetAnzsus();
-        pauseGame = false;
         PauseGame();
+        
+        acontecendo = false; // Permite que o evento aconteça novamente
         iformativoaAliancaA.SetActive(false);
     }
 
     public void RecusarA()
     {
-        iformativoaAliancaA.SetActive(false);
-        pauseGame = false;
+        
         PauseGame();
+        acontecendo = false;
+        iformativoaAliancaA.SetActive(false);
     }
 
     private void PauseGame()
@@ -207,7 +201,7 @@ public class Eventos : MonoBehaviour
 
     public void AcontecerCuba()
     {
-        if (Inimigo.GetArmasI() >= 20 && estadosUnidos.GetTensao() >= 20)
+        if (Inimigo.GetArmasI() >= 20 && estadosUnidos.GetTensao() >= 20 && cuba == false)
         {
             Inimigo.Cuba();
             cuba = true;
@@ -216,7 +210,7 @@ public class Eventos : MonoBehaviour
 
     public void AcontecerBerlim()
     {
-        if (Inimigo.GetArmasI() >= 30 && estadosUnidos.GetTensao() >= 30)
+        if (Inimigo.GetArmasI() >= 30 && estadosUnidos.GetTensao() >= 30 && berlim == false)
         {
             Inimigo.MuroDeBerlim();
             berlim = true;
@@ -225,7 +219,7 @@ public class Eventos : MonoBehaviour
 
     public void AcontecerStupnik()
     {
-        if (Inimigo.GetArmasI() >= 35 && estadosUnidos.GetTensao() >= 30)
+        if (Inimigo.GetArmasI() >= 35 && estadosUnidos.GetTensao() >= 30 && stupnik == false)
         {
             Inimigo.Stupnik();
             stupnik = true;
@@ -233,7 +227,7 @@ public class Eventos : MonoBehaviour
     }
     public void AcontecerChernobyl()
     {
-        if (Inimigo.GetArmasI() >= 40 && estadosUnidos.GetTensao() >= 35)
+        if (Inimigo.GetArmasI() >= 40 && estadosUnidos.GetTensao() >= 35 && chernobyl == false)
         {
             Inimigo.Chernobyl();
             chernobyl = true;

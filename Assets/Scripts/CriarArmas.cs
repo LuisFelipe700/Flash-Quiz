@@ -11,6 +11,7 @@ public class CriarArmas : MonoBehaviour
 {
     [SerializeField] private int armas = 0;
     [SerializeField] private int tensao = 0;
+    [SerializeField] private int confianca = 0;
     [SerializeField] Button botaoCriarArma; //Cria uma arma a cada click e adiciona entre 1 e 3 de tensao
     [SerializeField] Button espionarInimigoC; //Espiona China e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao 
     [SerializeField] Button espionarInimigoR; //Espiona Russia e adquire 5 armas e o inimigo perde 5, porem, aumenta 10 de tensao
@@ -22,7 +23,7 @@ public class CriarArmas : MonoBehaviour
     //Sons
     [SerializeField] AudioClip criarArma;
     //[SerializeField] Slider confiancaSlider;
-    [SerializeField] private int confianca = 0;
+    
     [SerializeField] Inimigo inimigo;
     private bool seatoA = false; //Seato
 
@@ -50,7 +51,6 @@ public class CriarArmas : MonoBehaviour
     {
         Limite();
         MostraTexto();
-        EndGame();
     }
 
     public void CriaArmas()
@@ -58,7 +58,6 @@ public class CriarArmas : MonoBehaviour
         armas += Random.Range(1, 5);
         tensao += Random.Range(1, 3); // aumenta tensão a cada clique
         confianca += Random.Range(1, 5);
-        EndGame();
 
         if (seatoA == true)
         {
@@ -67,17 +66,6 @@ public class CriarArmas : MonoBehaviour
     }
 
 
-    private void EndGame()
-    {
-        if (tensao >= 150f)
-        {
-            SceneManager.LoadScene("Derrota");
-        }
-        if (armas >= 100)
-        {
-            SceneManager.LoadScene("Foguete");
-        }
-    }
 
     public void EspionarR()
     {
@@ -110,6 +98,7 @@ public class CriarArmas : MonoBehaviour
         textoTensao.text = "Tensao: " + tensao.ToString() + "%";
         textoConfianca.text = "Confianca: " + confianca.ToString() + "%";
     }
+
 
     public int GetArmas()
     {
@@ -213,7 +202,7 @@ public class CriarArmas : MonoBehaviour
     public void GetAnzsus()
     {
         confianca += 10;
-        tensao += 5;
+        tensao -= 10;
         inimigo.GanharArmas();
     }
 }

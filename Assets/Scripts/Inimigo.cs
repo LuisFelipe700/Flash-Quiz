@@ -58,17 +58,7 @@ public class Inimigo : MonoBehaviour
         {
             armasI += Random.Range(1, 3);
         }
-        StartCoroutine(ContaArmas());
-
-        if (armasI >= 100)
-        {
-            StartCoroutine(Guerra());
-        }
-        IEnumerator Guerra()
-        {
-            yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("Derrota");
-        }
+        CriarArmas();
     }
 
     private void MostrarTexto()
@@ -88,7 +78,7 @@ public class Inimigo : MonoBehaviour
     IEnumerator Espiao()
     {
         Debug.Log("Espionando...");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         int dadoI = Random.Range(1, 6);
         if (dadoI > 3)
         {
@@ -98,6 +88,7 @@ public class Inimigo : MonoBehaviour
         {
             armasI -= Random.Range(1, 5);
         }
+        Espionar();
     }
 
     public void PactoVarsovia()
